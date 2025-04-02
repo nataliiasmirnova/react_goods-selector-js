@@ -27,8 +27,7 @@ export const App = () => {
           <button
             data-cy="ClearButton"
             type="button"
-            className="delete ml-3"
-            style={{ display: selectedGood === '' ? 'none' : 'block' }}
+            className={`delete ml-3 ${selectedGood === '' ? 'is-hidden' : ''}`}
             onClick={() => {
               setSelectedGood('');
             }}
@@ -44,7 +43,7 @@ export const App = () => {
               className={
                 selectedGood === good ? 'has-background-success-light' : ''
               }
-              key={good.id}
+              key={good}
             >
               <td>
                 {selectedGood !== good && (
